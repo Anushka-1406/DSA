@@ -4,7 +4,8 @@ class Solution {
     int r=0;
     while(t>0)
     {
-        r=r*10+t%10;
+        int ld=t%10;
+        r=r*10+ld;
         t=t/10;
     }  
     if(r==x)
