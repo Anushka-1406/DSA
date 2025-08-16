@@ -6,6 +6,7 @@ class Solution {
         result=result*10+lastdigit;
         x/=10;
         }
+        //to see if result lies in the range
         if(result>Integer.MAX_VALUE || result<Integer.MIN_VALUE){
             return 0;
         }
