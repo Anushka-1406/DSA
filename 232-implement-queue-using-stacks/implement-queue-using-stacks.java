@@ -1,6 +1,10 @@
+import java.util.Stack;
+
 class MyQueue {
-    private Stack<Integer> s1;
-    private Stack<Integer> s2;
+
+    Stack<Integer> s1;
+    Stack<Integer> s2;
+
     public MyQueue() {
         s1 = new Stack<>();
         s2 = new Stack<>();
@@ -11,11 +15,11 @@ class MyQueue {
     }
     
     public int pop() {
-        if(s1.isEmpty() && s2.isEmpty()){
-            return -1;
+        if (s1.isEmpty() && s2.isEmpty()) {
+            return -1; // queue empty
         }
-        if(s2.isEmpty()){
-            while(!s1.isEmpty()){
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty()) {
                 s2.push(s1.pop());
             }
         }
@@ -23,11 +27,12 @@ class MyQueue {
     }
     
     public int peek() {
-        if(s1.isEmpty() && s2.isEmpty()){
+        if (s1.isEmpty() && s2.isEmpty()) {
+            System.out.println("Queue is Empty!");
             return -1;
         }
-        if(s2.isEmpty()){
-            while(!s1.isEmpty()){
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty()) {
                 s2.push(s1.pop());
             }
         }
@@ -35,12 +40,7 @@ class MyQueue {
     }
     
     public boolean empty() {
-        if(s1.isEmpty() && s2.isEmpty()){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return s1.isEmpty() && s2.isEmpty();
     }
 }
 
