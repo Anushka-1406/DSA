@@ -5,14 +5,14 @@ class Solution {
         int maxarea = 0;
         while(left<right){
             int width = right - left;
-            int minheight = Math.min(height[left],height[right]);
-            int currentarea = width * minheight;
-            maxarea = Math.max(maxarea,currentarea);
-            if(height[left]<height[right]){
-                left++;
+            int minheight = Math.min(height[left], height[right]);
+            int currarea = width * minheight;
+            maxarea = Math.max(currarea, maxarea);
+            if(height[left] < height[right]){
+                left ++;
             }
             else{
-                right--;
+                right --;
             }
         }
         return maxarea;
