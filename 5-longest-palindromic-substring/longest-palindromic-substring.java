@@ -7,7 +7,7 @@ class Solution {
             int even = expand(s,i,i+1);
             int maxlen = Math.max(odd, even);
 
-            if(maxlen > end - start  + 1){
+            if(maxlen > end - start + 1){
                 start = i - (maxlen-1)/2;
                 end = i + maxlen/2;
             }
@@ -15,7 +15,6 @@ class Solution {
         return s.substring(start,end+1);
     }
     private int expand(String s, int left, int right){
-        int count =0;
         while( left >=0 && right < s.length() && s.charAt(left) == s.charAt(right)){
             left--;
             right++;
