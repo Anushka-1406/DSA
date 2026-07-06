@@ -1,27 +1,31 @@
 class Solution {
+    public void dfs(int row, int col , char[][] grid, boolean[][] vis){
+        vis[row][col] = true;
+
+        int[] drow = {-1,0,1,0};
+        int[] dcol = {0,1,0,-1};
+
+        for(int i=0;i<4;i++){
+            int nrow = row+drow[i];
+            int ncol = col+dcol[i];
+
+            if(nrow >= 0 && nrow < grid.length && ncol >= 0 && ncol < grid[0].length && grid[nrow][ncol] == '1' && !vis[nrow][ncol]){
+                dfs(nrow,ncol,grid,vis);
+            }
+        }
+    }
     public int numIslands(char[][] grid) {
-        int m=grid.length , n = grid[0].length, count=0;
-        Queue<int[]> q = new LinkedList<>();
-        int[][] d = {{1,0},{-1,0},{0,1},{0,-1}};
+        int n = grid.length;
+        int m = grid[0].length;
 
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(grid[i][j] == '1'){
+        boolean[][] vis = new boolean[n][m];
+        int count = 0;
+
+        for(int i=0;i<n;i++){
+            for(int j =0;j<m;j++){
+                if(grid[i][j] == '1' && !vis[i][j]){
                     count++;
-                    q.offer(new int[]{i,j});
-                    grid[i][j]='0';
-
-                    while(!q.isEmpty()){
-                        int[] c = q.poll();
-                        for(int[] x : d){
-                            int r = c[0] + x[0];
-                            int col = c[1] + x[1];
-                            if(r>=0 && col>=0 && r<m && col<n && grid[r][col] == '1'){
-                                grid[r][col] = '0';
-                                q.offer(new int[]{r,col});
-                            }
-                        }
-                    }
+                    dfs(i, j, grid, vis);
                 }
             }
         }
