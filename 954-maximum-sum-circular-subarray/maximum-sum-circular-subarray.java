@@ -12,7 +12,7 @@ class Solution {
         currmin = Math.min(num, currmin +num);
         minsum = Math.min(currmin, minsum);
        }
-        if(maxsum <0) return maxsum;
+        if(totalsum == minsum) return maxsum;
         return Math.max(maxsum , totalsum-minsum);
 
        
