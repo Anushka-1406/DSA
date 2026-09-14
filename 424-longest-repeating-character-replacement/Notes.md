@@ -1,1 +1,1 @@
-<h2>longest-repeating-character-replacement Notes</h2><hr>[ Time taken: 1hr 30m 53s ]
+<h2>longest-repeating-character-replacement Notes</h2><hr>[ Time taken: 17m 50s ]
