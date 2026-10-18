@@ -4,7 +4,7 @@ class Solution {
         for(int num : nums){
             set.add(num);
         }
-        if(set.size() < nums.length){
+        if(set.size()<nums.length){
             return true;
         }
         else{
