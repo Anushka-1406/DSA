@@ -6,12 +6,12 @@ class Solution {
         }
         int longest = 0;
         for(int num : numset){
-            if(!numset.contains(num-1)){
+            if(!numset.contains(num - 1)){
                 int length = 1;
-                while(numset.contains(num+length)){
+                while(numset.contains(num + length)){
                     length++;
                 }
-                longest = Math.max(longest,length);
+                longest = Math.max(length,longest);
             }
         }
         return longest;
