@@ -12,7 +12,7 @@ class Solution {
             }
         }
         int[] finalans = new int[ans.size()];
-        for(int i = 0;i<finalans.length;i++){
+        for(int i=0;i<finalans.length;i++){
             finalans[i] = ans.get(i);
         }
         return finalans;
