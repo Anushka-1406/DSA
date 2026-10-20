@@ -3,7 +3,7 @@ class Solution {
         List<Integer> result = new ArrayList<>();
         int[] scount = new int[26];
         int[] pcount = new int[26];
-        if(p.length() > s.length()) return result;
+        if(p.length()>s.length()) return result;
         for(int i=0;i<p.length();i++){
             scount[s.charAt(i)-'a']++;
             pcount[p.charAt(i)-'a']++;
@@ -13,7 +13,7 @@ class Solution {
             scount[s.charAt(i)-'a']++;
             scount[s.charAt(i-p.length())-'a']--;
             if(Arrays.equals(scount,pcount)){
-                result.add(i-p.length()+1);
+                result.add((i-p.length())+1);
             }
         }
         return result;
