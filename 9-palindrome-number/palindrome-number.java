@@ -7,6 +7,6 @@ class Solution {
             revnum = (revnum*10)+ld;
             x = x/10;
         }
-        return dup == revnum;
+        return revnum == dup;
     }
 }
